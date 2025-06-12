@@ -159,21 +159,47 @@ nav a.active {
 /* ===== Project Grid ===== */
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 2fr 1fr;
   gap: 2rem;
   margin: auto 20px;
 }
+.project-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  margin: auto 20px;
+}
+.inner-card-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 1rem;
+  align-items: center;
+}
 .project-card {
  background-color: var(--light-secondary);
- border-radius: 8px;
  overflow: hidden;
  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
  padding: 10px;
-   border-radius: var(--border-radius);
-  border: 5px solid var(--border-color);
+ border-radius: var(--border-radius);
+ border: 5px solid var(--border-color);
+ margin: 10px auto;
+}
+.project-card img {
+  width:1fr;
+  height: auto;
+  border-radius: var(--border-radius);
+}
+.project-card h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: var(--secondary-dark);
+  text-align: left;
+}
+.project-card p {
+  text-align: left;
 }
 
-/* ===== Project Grid ===== */
+/* ===== Blog Grid ===== */
 .blog-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
