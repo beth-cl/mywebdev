@@ -435,11 +435,11 @@ footer p {
 /* ===== ABOUT SECTION ===== */
 
 .about-window {
-  background: var(--primary-color);
+  background: var(--light-secondary);
   border-radius: var(--border-radius);
-  border: 1px solid var(--border-color);
+  border: 10px solid var(--border-color);
   overflow: hidden;
-  margin: 100px;
+  margin: 50px;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
   -webkit-border-radius: var(--border-radius);
   -moz-border-radius: var(--border-radius);
@@ -453,10 +453,20 @@ footer p {
   position: relative;
   overflow: hidden;
 }
+.about-bio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.5rem;
+  align-items: center;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: var(--container-padding);
+}
 .about-textbox {
-  margin: 20px 40px 20px auto;
-  padding: 20px 5px;
-  background: var(--light-background);
+  /**/margin: 20px 40px 20px auto;
+  padding: 5px 5px;
+  background: var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
   -webkit-border-radius: var(--border-radius);
@@ -465,8 +475,8 @@ footer p {
   -o-border-radius: var(--border-radius);
 }
 .about-image {
-  margin: 20px 85px;
-  background: var(--light-background);
+  /**/margin: 20px 85px;
+  background: var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
   -webkit-border-radius: var(--border-radius);
@@ -476,21 +486,28 @@ footer p {
   text-align: center;
 }
 .about-languages {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: 200px;
-  margin-right: 200px;
-  padding: 5px;
-  padding-top: 30px;
-  padding-bottom: 30px;
-  background: var(--light-background);
-  border-radius: 50%;
+  margin: 20px 200px;
+  padding: 30px 5px;
+  background: var(--primary-color);
+  border-radius: var(--border-radius);
   text-align: center;
   font-size: larger;
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  -ms-border-radius: 50%;
-  -o-border-radius: 50%;
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
+}
+.about-experience {
+  margin: 20px 200px;
+  padding: 30px 5px;
+  background: var(--secondary-dark);
+  border-radius: var(--border-radius);
+  text-align: center;
+  font-size: larger;
+  -webkit-border-radius: var(--border-radius);
+  -moz-border-radius: var(--border-radius);
+  -ms-border-radius: var(--border-radius);
+  -o-border-radius: var(--border-radius);
 }
 .about-sections {
   display: grid;
@@ -504,21 +521,6 @@ footer p {
   padding-top: 10px;
   padding-bottom: 10px;
   padding-right: 100px;
-}
-.about-sections-text {
-  margin-top: 20px;
-  margin-bottom: 20px;
-  padding-left: 5px;
-  padding-right: 5px;
-  padding-bottom: 200px;
-  background: var(--light-background);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
-  text-align: center;
 }
 
 /* ===== MISCELLANEOUS ===== */
