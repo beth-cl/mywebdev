@@ -464,8 +464,8 @@ footer p {
   padding: var(--container-padding);
 }
 .about-textbox {
-  /**/margin: 20px 40px 20px auto;
-  padding: 5px 5px;
+  margin: 20px 40px 20px auto;
+  /*padding: 5px 5px;*/
   background: var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -475,7 +475,7 @@ footer p {
   -o-border-radius: var(--border-radius);
 }
 .about-image {
-  /**/margin: 20px 85px;
+  margin: 20px 85px;
   background: var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
