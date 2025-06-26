@@ -447,7 +447,6 @@ footer p {
   -o-border-radius: var(--border-radius);
 }
 .about-grid {
-  min-height: 100vh;
   display: flex;
   align-items: center;
   position: relative;
@@ -463,9 +462,31 @@ footer p {
   margin: 0 auto;
   padding: var(--container-padding);
 }
+.about-experience-grid {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  align-items: flex-start;
+  position: inherit;
+  overflow: auto;
+}
+.about-subsections-three-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  position: inherit;
+  overflow: auto;
+}
+.about-subsections-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  position: inherit;
+  overflow: auto;
+}
+
 .about-textbox {
-  margin: 20px 40px 20px auto;
-  /*padding: 5px 5px;*/
+  margin: 20px 40px 20px 40px;
+  padding: 30px 5px;
   background: var(--border-color);
   border-radius: var(--border-radius);
   overflow: hidden;
@@ -486,19 +507,19 @@ footer p {
   text-align: center;
 }
 .about-languages {
-  margin: 20px 200px;
-  padding: 30px 5px;
+  margin: 20px 20px;
+  padding:10px;
   background: var(--primary-color);
-  border-radius: var(--border-radius);
+  border-radius: 50% 10%;
   text-align: center;
   font-size: larger;
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
+  -webkit-border-radius: 50% 10%;
+  -moz-border-radius: 50% 10%;
+  -ms-border-radius: 50% 10%;
+  -o-border-radius: 50% 10%;
 }
 .about-experience {
-  margin: 20px 200px;
+  margin: 20px 20px;
   padding: 30px 5px;
   background: var(--secondary-dark);
   border-radius: var(--border-radius);
