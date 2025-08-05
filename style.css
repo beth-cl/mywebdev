@@ -1,13 +1,17 @@
 :root {
   /* Fonts */
   --primary-color: #ff7479;
-  --secondary-color: #B56576;
+  --secondary-color: #b56576;
   --dark-background: #355070;
-  --secondary-dark: #6D597A;
+  --secondary-dark: #6d597a;
   --light-background: #fff0f7ff;
   --light-secondary: #f8ecc3;
-  --border-color: #EAAC8B;
+  --border-color: #eaac8b;
   --card-color: #cff3c7;
+  --text-primary: #333;
+  --text-secondary: #666;
+  --text-muted: #999;
+
 
     /* Spacing */
   --section-padding: 6rem 0;
@@ -438,116 +442,82 @@ footer p {
 }
 
 /* ===== ABOUT SECTION ===== */
+.about {
+  padding: var(--section-padding);
+}
 
 .about-window {
-  background: var(--light-secondary);
+  background: var(--primary-color);
   border-radius: var(--border-radius);
-  border: 10px solid var(--border-color);
+  border: 1px solid var(--border-color);
   overflow: hidden;
-  margin: 50px;
+  margin: 2rem auto;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
+  max-width: 1000px;
 }
+
 .about-grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 2rem;
+  padding: 2rem;
+  align-items: start;
+}
+
+.about-text {
   display: flex;
-  align-items: center;
-  position: relative;
-  overflow: hidden;
+  flex-direction: column;
+  gap: 1rem;
 }
-.about-bio-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 0.5rem;
-  align-items: center;
-  width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
-  padding: var(--container-padding);
+
+.about-image {
+  background: var(--light-background);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  text-align: center;
 }
-.about-experience-grid {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  align-items: flex-start;
-  position: inherit;
-  overflow: auto;
+
+.about-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: var(--border-radius);
 }
-.about-subsections-three-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  align-items: center;
-  position: inherit;
-  overflow: auto;
-}
-.about-subsections-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  align-items: center;
-  position: inherit;
-  overflow: auto;
+
+.about-languages {
+  background: var(--light-background);
+  border-radius: 50%;
+  padding: 1rem;
+  text-align: center;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--secondary-dark);
 }
 
 .about-textbox {
-  margin: 20px 40px 20px 40px;
-  padding: 30px 5px;
-  background: var(--border-color);
+  background: var(--light-background);
   border-radius: var(--border-radius);
-  overflow: hidden;
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
+  padding: 1.5rem;
+  margin-bottom: 1rem;
 }
-.about-image {
-  margin: 20px 85px;
-  background: var(--border-color);
-  border-radius: var(--border-radius);
-  overflow: hidden;
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
-  text-align: center;
-}
-.about-languages {
-  margin: 20px 40px;
-  padding:5px;
-  background: var(--primary-color);
-  border-radius: 50% 10%;
-  text-align: center;
-  font-size: larger;
-  -webkit-border-radius: 50% 10%;
-  -moz-border-radius: 50% 10%;
-  -ms-border-radius: 50% 10%;
-  -o-border-radius: 50% 10%;
-}
-.about-experience {
-  margin: 20px 20px;
-  padding: 30px 5px;
-  background: var(--secondary-dark);
-  border-radius: var(--border-radius);
-  text-align: center;
-  font-size: larger;
-  -webkit-border-radius: var(--border-radius);
-  -moz-border-radius: var(--border-radius);
-  -ms-border-radius: var(--border-radius);
-  -o-border-radius: var(--border-radius);
-}
+
 .about-sections {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1rem;
-  align-items: calc(center - 300px);
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: var(--container-padding);
-  padding-top: 10px;
-  padding-bottom: 10px;
-  padding-right: 100px;
 }
+
+.about-sections-text {
+  background: var(--light-background);
+  border-radius: var(--border-radius);
+  padding: 1.5rem;
+  text-align: left;
+}
+
+.about-sections-text ul {
+  margin-top: 0.5rem;
+  padding-left: 1.5rem;
+}
+
 
 /* ===== MISCELLANEOUS ===== */
 .section-line {
