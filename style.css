@@ -167,6 +167,12 @@ nav a.active {
   gap: 2rem;
   margin: auto 20px;
 }
+@media (max-width: 768px) {
+  .project-grid {
+    grid-template-columns: 1fr;
+  }
+  
+}
 .inner-card-grid {
   display: grid;
   grid-template-columns: 1fr 2fr;
