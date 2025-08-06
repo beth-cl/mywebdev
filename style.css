@@ -1,12 +1,12 @@
 :root {
   /* Fonts */
-  --primary-color: #ff7479;
-  --secondary-color: #b56576;
-  --dark-background: #355070;
-  --secondary-dark: #6d597a;
+  --primary-color: #005662;
+  --secondary-color: #32b485;
+  --dark-background: #01262b;
+  --secondary-dark: #bd1150;
   --light-background: #fff0f7ff;
-  --light-secondary: #f8ecc3;
-  --border-color: #eaac8b;
+  --light-secondary: #f4d1d8;
+  --border-color: #ff7aab;
   --card-color: #cff3c7;
   --text-primary: #333;
   --text-secondary: #666;
