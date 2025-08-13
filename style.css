@@ -11,6 +11,9 @@
   --text-primary: #333;
   --text-secondary: #666;
   --text-muted: #999;
+  --font-body: 'Nunito', sans-serif;
+  --font-primary: 'DM Serif Display', serif;
+  --font-secondary: 'Roboto Mono', monospace;
 
 
     /* Spacing */
@@ -25,8 +28,26 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.dm-serif-display-regular {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+.dm-serif-display-regular-italic {
+  font-family: "DM Serif Display", serif;
+  font-weight: 400;
+  font-style: italic;
+}
+.roboto-mono {
+  font-family: "Roboto Mono", monospace;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
 body {
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-family: var(--font-body);
   line-height: 1.6;
   color: #333;
   background-color: var(--light-background);
@@ -60,10 +81,12 @@ p {
   color: dark-background;
 }
 h1 {
+  font-family: var(--font-primary);
   padding-top: 3rem;
   font-size: 2.5rem;
 }
 h2 {
+  font-family: var(--font-primary);
   font-size: 2.5rem;
   margin-top: 2rem;
   text-align: center;
@@ -251,7 +274,7 @@ nav a.active {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: auto 100px;
+  margin: 2rem 10rem;
 }
 
 /* ===== FOOTER ===== */
