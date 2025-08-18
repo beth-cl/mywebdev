@@ -194,7 +194,6 @@ nav a.active {
   .project-grid {
     grid-template-columns: 1fr;
   }
-  
 }
 .inner-card-grid {
   display: grid;
@@ -210,6 +209,11 @@ nav a.active {
  border-radius: var(--border-radius);
  border: 5px solid var(--border-color);
  margin: 10px auto;
+}
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
 }
 .project-card img {
   width:1fr;
@@ -249,8 +253,19 @@ nav a.active {
  background-color: var(--primary-color);
  color: white;
  text-decoration: none;
- border-radius: 4px;
+ border-radius: 8px;
  font-weight: 600;
+ border-top: none;
+  border-right: none;
+  border-left: 4px;
+  border-bottom: 4px;
+  border: solid rgba(255, 255, 255, 0);
+}
+.button:hover {
+  transform: translateY(-2px);
+  border-bottom-color: var(--secondary-dark);
+  border-left-color: var(--secondary-dark);
+  transition: all 0.3s ease-in-out;
 }
 .button-secondary {
   display: inline-block;
@@ -259,24 +274,45 @@ nav a.active {
   background-color: var(--secondary-color);
   color: white;
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 600;
+  border-top: none;
+  border-right: none;
+  border-left: 4px;
+  border-bottom: 4px;
+  border: solid rgba(255, 255, 255, 0);
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+.button-secondary:hover {
+  transform: translateY(-2px);
+  border-bottom-color: var(--border-color);
+  border-left-color: var(--border-color);
+  transition: all 0.3s ease-in-out;
 }
 .button-link {
   display: inline-block;
   padding: 0.5rem 1rem;
-  background-color: var(--primary-color);
-  color: white;
+  background: transparent;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   text-decoration: none;
-  border-radius: 4px;
+  border-radius: 8px;
   font-weight: 600;
   align-content: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 2rem 10rem;
+  margin: 1rem 6rem;
 }
-
+.button-link:hover {
+  transform: translateY(-2px);
+  background-color: var(--primary-color);
+  color: white;
+  transition: background-color 0.5s ease-in-out;
+}
 /* ===== FOOTER ===== */
 footer {
   background-color: var(--primary-color);
