@@ -1,0 +1,95 @@
+<!-- Example Post 1 -->
+<article class="blog-post">
+  <h2>CSGO: coursework</h2>
+  <div class="post-meta">
+    <time datetime="2025-08-30">14 May 2024</time>
+    <span class="category">First Year</span>
+    <span class="category">Unreal Engine</span>
+  </div>
+
+  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+  <div class="post-content">
+    <p>
+      To start with, I coded a menu screen. This is because I haven't used UE5
+      in a while and wanted to start with something to help get me back into the
+      mindset of blueprint programming. This was relatively easy, by attaching a
+      widget blueprint with the title, buttons and background to the level
+      blueprint. One problem I encountered was where once the scene changed from
+      the title to the first person pre-set, movement would stop working.
+      However this problem didn't occur from running the pre-set by itself. To
+      fix this I realised that I had to set the code to Set input mode UI only,
+      this meant that when the scene switched the game wouldn't receive inputs.
+      I fixed this by adding a Set Input mode Game only block to the On Clicked
+      function for the play button.
+    </p>
+    <p>
+      The next thing I worked on was the Lifts that I used around the main Play
+      area. This went smoothly apart from Near the very end where the lift
+      wasn't moving but I couldn't figure out why. The reason was that I was
+      using the the scene components instead of the billboard components when
+      getting the world locations for top and bottom. This stopped the lift from
+      moving as the scene components hadn't moved, it was the billboard
+      components that had. After that, the lift worked as expected in my code.
+      Coding this I used a Time Blueprint block and a float track. by using it
+      here, I see how it could also be used for things like AI movements in
+      future projects.
+    </p>
+    <p>
+      I created a child class from this lift class for a lift that is spawned
+      when 10 or more points have been collected. This lift was the same as the
+      original lift apart for the size of the platform and the distance of the
+      top billboard.
+    </p>
+    <p>
+      Having this lift as a child class dramatically decreased the amount of
+      code needed in this blueprint, massively reducing redundancy in the code.
+    </p>
+    <p>
+      I then decided to work on a point system. The meshes of these were very
+      simple, with just a spherical static mesh and a collision capsule.
+    </p>
+    <p>
+      I used the same point spawner blueprint for both single and double point
+      spheres. However, the difference between their spawn events is that single
+      points spawn on a set timer of every 7 seconds, meanwhile double points
+      spawn on a random time between 14 and 60 seconds. One syntax error that I
+      had a problem with was not ticking the Looping boolean on the Set timer by
+      event block, this meant that the point would only spawn once.
+    </p>
+    <p>
+      I used a print score string in this code to help with debugging so that I
+      could check that as the points were being collected and being added to the
+      Score variable that was being retrieved from another blueprint.
+    </p>
+    <p>
+      One way I could have improved my code is by making the double points
+      sphere a child class of the single point sphere. This would have made the
+      code a lot more efficient and there would have been less redundant code in
+      the double point blueprint.
+    </p>
+    <p>
+      I made a simple AI to follow the player in this game. This AI slowly
+      increased in speed with the amount of points scored.
+    </p>
+    <p>
+      This code -although effective- could be more efficient by using a switch
+      case as switch statements only read the case you need unlike these if
+      statements where they are all read whether they are needed or not. This
+      would both dramatically shorten the code and reduce the amounts of pin
+      links needed, making the code look a lot neater and a lot less like
+      spaghetti code.
+    </p>
+    <p>
+      Making blueprints have a Play Sound 2D block in their codes was very
+      useful when it came to the debugging process because it meant that I could
+      easily tell which parts of blueprints had errors by what sounds were and
+      weren't playing or were playing when they were not meant to.
+    </p>
+  </div>
+  <div class="post-footer">
+    <a href="#" class="read-more">Read More</a>
+  </div>
+</article>
+
+
+

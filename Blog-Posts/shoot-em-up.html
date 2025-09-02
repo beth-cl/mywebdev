@@ -1,0 +1,94 @@
+<!-- Shoot 'em Up Post 1 -->
+<article class="blog-post">
+  <h2>"Shoot 'em up": S**t Game</h2>
+  <div class="post-meta">
+    <time datetime="2023-10-13">13 October 2023</time>
+    <span class="category">First Year</span>
+    <span class="category">Unity</span>
+  </div>
+  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+  <div class="post-content">
+    <p>
+      For this "Shoot 'Em Up" game jam prompt, our group decided to make a game
+      where you play as an exterminator going into the sewers to tame the
+      increasingly bad rat problem. As you do, the rats become increasingly
+      strange with some of them in boats, planes or even mechanical suits.
+    </p>
+    <p>
+      This game had two coders working on it, as a result the code work was
+      split between the two of us. We decided to make the game in Unity, an
+      engine I have not used before, however, the other developer was very
+      experienced in it. Because of this, the workload was split so that I would
+      do the more beginner friendly tasks as the other coder had massively more
+      experience than me. This resulted in my task being the Game Menu and Pause
+      screen.
+    </p>
+    <h3>Menu Design</h3>
+    <img src="images/lorumipsum.png" alt="lorum ipsum Screenshot" />
+    <p>
+      The First iteration of the menu. Each button changes colour when hovered
+      over and when clicked.
+    </p>
+    <p>
+      At this point, the buttons change colour when hovered and clicked, but
+      they do not do anything once clicked. Therefore, a C# code was needed to
+      link the buttons to new scenes. I created two placeholder scenes (one for
+      play and one for options) and added them to a hierarchy of scenes.
+    </p>
+    <pre><code>using System.Collections;
+        using System.Collections.Generic;
+        using UnityEngine;
+        using UnityEngine.SceneManagement;
+        
+        public class MainMenu : MonoBehaviour
+        {
+            public void PlayGame()
+            {
+                SceneManager.LoadSceneAsync("test1"); //Loads next scene
+                Debug.Log("PLAY GAME!");
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //Loads next scene
+            }
+        
+            public void GameOptions()
+            {
+                Debug.Log("OPTIONS MENU");
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 2);
+                //SceneManager.LoadSceneAsync("Options");
+            }
+        
+            public void QuitGame()
+            {
+                Debug.Log("QUIT GAME!");
+                Application.Quit();
+            }
+        }        
+        </code></pre>
+    <p>
+      Then using this, a C# code needed a function for each button which called
+      the new scene. This can be done in two ways as shown by the code above. In
+      the end I used the hierarchal way of calling them as the scenes I were
+      using were place holders and so it made more sense to reference them by
+      build index so we wouldn't have to change the code when linking it to the
+      other coders work as long as it was in the same place in the build index.
+    </p>
+    <p>
+      Once coded, this needs to be linked to the buttons themselves. Therefore
+      it is attached to the MainMenu game object that the buttons are in. Then,
+      it is dragged into OnClick() in the button and the appropriate function is
+      called for each button. This resulted in A fully working menu that changed
+      the scene on a button press.
+    </p>
+    <h3>Reflection</h3>
+    <p>
+      On reflection, this was a good way to ease myself into Unity, and coding
+      C# for the first time. It helped me to learn the syntax of C# so that in
+      future I would have a good understanding of the basic syntax of the
+      language meaning less syntax errors in future. This will help me to more
+      easily create more complicated code in future.
+    </p>
+  </div>
+  <div class="post-footer">
+    <a href="#" class="read-more">Read More</a>
+  </div>
+</article>
+

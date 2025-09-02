@@ -1,0 +1,376 @@
+<!-- Example Post 1 -->
+<article class="blog-post">
+  <h2>Programming Application Programming Interfaces</h2>
+  <div class="post-meta">
+    <time datetime="2025-01-15">15 January 2025</time>
+    <span class="category">Second Year</span>
+    <span class="category">Unity</span>
+  </div>
+  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+  <div class="post-content">
+    <h3>Project Summary</h3>
+    <p>
+      For this module, our group decided to create software that used players'
+      locational data -found using their IP address- which is then used to make
+      in-game weather accurate to real-life conditions. Players can then search
+      through another API to find any plant they want and plant it, needing to
+      care for it, for example: watering it if it has not rained in a while.
+      Some of the stretch goals we had for this project included sound effects,
+      daylight cycles and only being able to plant regional plants. We used a
+      variety of APIs in this project including: Unity Framework APIs (for
+      example Unity Scripting and Unity Addressable Asset Systems), IP-API,
+      Google Image API, Visual Crossing’s Weather API and Perenual’s Plant API.
+      Although we did not reach any of the stretch goals, we produced an
+      artifact with real-life plants to grow -with image representations- and a
+      weather system with particles that matches the locational weather data.
+    </p>
+    <h3>Research, Analysis and Justification for Choice of API</h3>
+    <p>
+      For our initial research we used a generalised approach to API research
+      while using example projects from previous years, like AI mechanisms and
+      procedural generation, to help our research. Once the idea had been
+      realised, we split the research between the group depending on which API
+      we would be working to implement. My main focus was on the API we would be
+      using to retrieve the players location to use for the locational weather
+      data.
+    </p>
+    <p>
+      The first viable option was IP-API (IP-API, 2022). This simple API would
+      simply get the ip address through a base path where if no IP address was
+      manually put into the call then the device's own IP would be used. This
+      could then be customised to give back only certain fields. These fields
+      are returned as a JSON file which is supported by our chosen engine
+      (Unity) but could also be returned as an XML, CSV, NEwsline or PHP file. A
+      JSON file was used due to both its compatibility with Unity and also its
+      simplicity to read and implement. The strength of this API is that it does
+      not require the programmer to collect the IP address to put into the API.
+      The API stores the network IP address in RAM for up to a minute. Any other
+      information provided to the API is discarded after the request is answered
+      and the requests are not logged. This is beneficial as it means that the
+      IP is not stored for any longer than it has to be and so is secure
+      (IP-API: Terms and Policies, 2022). 
+    </p>
+    <p>
+      Another option was IP Flare (IP Flare, n.d.). The way to call this API is
+      the same as the IP-API however an API-Key is needed to authenticate
+      requests. This made it a weaker choice than IP-API as it made calling it
+      more complex. This also means that to get a key an account has to be made
+      with IP Flare, with one unpaid version and many paid versions depending on
+      the amount of calls to the API the project needs.
+    </p>
+    <p>
+      Out of these two options, we chose the IP-API for this project as we did
+      not need a key to access the API nor make an account. However, if this
+      project were to be made commercially then the IP-API could not be used
+      because it is for non-commercial purposes only and so IP Flare should be
+      used.
+    </p>
+    <p>
+      For the plant information API, we decided to use Trefle (Trefle API,
+      n.d.). Trefle API can return highly specific botanical information on
+      whatever plant inputted by the user. This data ranges from the plants
+      identifying characteristics, to things like growth rates and precipitation
+      needed. This API has a free plan which has some limitations, including
+      only being able to search up the first 3000 plants in its database and
+      only allowing 120 requests per minute. Despite these limitations, this is
+      the best free plan for a plant database API that we can find and so it is
+      the one best suited for our project. 
+    </p>
+    <p>
+      To provide images of the plant, we planned to use Open AI’s free-to-use
+      API (OpenAI API, n.d.) that allows for creation of a unique image when
+      given a prompt. Within our project, this would be used to generate sprites
+      for plants using the data returned from the Trefle database. This would
+      allow the player to grow essentially any plant they would like accompanied
+      by an accurate sprite for it in game. However, on further research, we
+      realised that there was a secret paywall for this if you wanted to use it
+      as an API and therefore we had to look for other options. Due to the
+      limited availability of APIs of this type, our next best option was the
+      Google Image API. This API takes your search term and then returns an
+      image from a Google Image search. This API is being used on a free
+      version, and as a result our image returns would be limited. As well as,
+      the images that are returned would not work as well as sprites as with the
+      Open AI API we could have asked it to make image sprites specifically,
+      while this API just takes an image from the internet, it does not generate
+      its own image. Therefore, although this API was not our original choice,
+      it is a viable substitute to provide image representations of the plants
+      to the players.
+    </p>
+    <p>
+      For our weather API we decided to use Visual Crossings weather API
+      (Weather API, n.d.), this API can provide not only current weather
+      information but also soil conditions of certain areas, which could prove
+      very useful for projects of this nature. This API is free to use without
+      limitations on what data it will return as well as having a worldwide
+      reach of both current and historical weather data and allows for 10000
+      calls a day. As a result, this makes it the ideal choice for our project
+      as it has one of the most generous free subscriptions out of all the other
+      weather APIs, for example, AccuWeather only allows for 50 free calls a day
+      (AccuWeather API Packages, n.d.).
+    </p>
+    <h3>Appraisal of API in Application of Project</h3>
+    <p>
+      Using this API was a straightforward process due to having good
+      documentation. The nature of calling the API meant that the code only
+      returns the very minimum of information from the API which means there are
+      no redundancies of information as the only two responses of the API we
+      needed were ‘status’ and ‘city’, the IP address is not returned to the
+      code which also reduces the risks coming from using an APIthat handles
+      sensitive information like an IP address. One of the choices made while
+      working with this API was whether we wanted to have the players’ city or
+      longitude and latitude coordinates to be returned from the API, as the
+      IP-API can return both and the weather API that we are feeding it into
+      could also take both kinds of inputs. We decided to use the players’ city
+      as it is a lot less sensitive than their coordinates and also -looking
+      from a design perspective- makes the player feel more secure as the
+      software does not know their exact location and instead knows their
+      general location, which could be off-putting. Using the city also came
+      with the added benefit of later on being able to use it in the design of
+      the user interface. The only other value used (‘status’) was important to
+      make sure that the city was only returned by the function if the fetch
+      from the API was successful, which prevents errors at execution. 
+    </p>
+    <p>
+      Ultimately, this API was perfectly suitable for the project. Its main
+      fault is that this project cannot be released commercially with the API
+      used and as a result, if this project was wanted to be put in a commercial
+      project an API such as IP Flare would need to be used which would also
+      mean that the code for accessing the API would be redundant and would be
+      needed to be changed as key would now be required to use the API. There is
+      however documentation on how to implement this and so this change over to
+      a different API would not be a difficult process. As well as, it would not
+      affect the json file as specific fields only can still be called using IP
+      Flare and the required field names are the same.
+    </p>
+    <p>
+      Unity has a lot of built in APIs in its engine, for example, one of the
+      Unity packages I used was Unity’s Addressable Asset System. This API was
+      not one we originally anticipated using but was very beneficial. I used it
+      in my UI widget for optimized memory usage and reduced load times by
+      loading assets dynamically. This works well in the project however there
+      was a learning curve due to the documentation being complex to understand.
+      If there were to be future iterations of this project it would be
+      beneficial to expand the use of this API to the rest of the project so
+      that the project as a whole has better memory management as well as
+      improved load speeds.
+    </p>
+    <p>
+      The weather API was well implemented into the project. It works well in
+      conjunction with the location API and provides a wide variety of returned
+      variables that could be used for features in the game. Calling for certain
+      variables can be slightly complicated due to its complicated .JSON files,
+      however after a small learning curve it is fairly understandable. Due to
+      the large variety of available variables from the API, there are a lot of
+      features that could have been added if the development timeframe was
+      larger, for example, the temperature could have been implemented in the
+      program's UI or in different visuals for different temperatures.
+    </p>
+    <p>
+      The plant API that we used was integrated incredibly well. The search bar
+      worked well and being able to select a plant for it to produce a dropdown
+      of its qualities was coded nicely. There are a few errors with this
+      integration, for example searching things like “plant” or “flower” are too
+      general of a prompt and will cause the whole program to crash; however
+      this could easily be fixed by adding a search filter to the search bar
+      that doesn’t allow certain words that could cause an error to be searched.
+      Another issue comes from where we are only able to use the free version of
+      the Perenual API, because of this we could not use the full database of
+      plants and only the first 3000 plants on the database are free. This means
+      that, if you search a plant that is not in those first 3000 plants and try
+      to click on it for more information, the program crashes. This could be
+      fixed by adding these to the search filter however, this would be quite
+      time consuming as there would be a large number of kinds of plants to
+      block and so it would definitely not be able to be achieved within the
+      development timeframe. Both these errors could be fixed by purchasing the
+      paid version of the Perenual API, this would allow us to use large search
+      terms like “Plant” which is capped in the free version and also give us
+      access to the full database which means that searching plants outside of
+      the 3000 free plants would also no longer be an issue.
+    </p>
+    <p>
+      Therefore, in all the implementation of this API has been extremely
+      successful however the main blockage that it has is that the paid version
+      is needed for the easiest fix of the errors it has.
+    </p>
+    <p>
+      For the Image API there were a lot of blockers before we got to the Google
+      Image API that we decided to use due to the hidden paywalls of the OpenAI
+      API.. This API had a steep learning curve due to having very little
+      documentation. However, it does provide images for any plant in the
+      information drop-down in the final artifact. Although the image loads, it
+      is quite slow, with the image appearing a few seconds after the specific
+      plant is picked, as well as sometimes the images are not completely
+      accurate or relevant due to how the API just picks an image and returns it
+      without any checks. Despite these flaws, when you consider the significant
+      amount of blockages the group had for getting this implemented into the
+      project, the implementation of the Google Image API was successful,
+      however it does suffer from the same flaw as a lot of the APIs in this
+      project that the best API for the project was locked behind a paywall. 
+    </p>
+    <h3>Problem Solving</h3>
+    <img src="images/elmoconcerned.jpg" alt="test" />
+    <p>
+      One issue faced when working on this project was when working on the UI of
+      the software. I was tasked to program the weather information widget. This
+      widget would show the players location, the weather and an image
+      representation of that weather.
+    </p>
+    <p>
+      Displaying the location and weather information was a very simple task as
+      both the weather and location information is returned from their methods
+      as strings, however the changing image with the weather type proved to be
+      more challenging.
+    </p>
+    <code><pre></pre></code>
+    <p>
+      In the first iteration of this code, the code would get the weather type
+      from the GetWeather() function and use that to load in the correct image
+      file for the new sprite, then -after a check to see that the sprite has
+      loaded properly- the image on the widget would change to reflect the
+      sprite. If the file wasn’t loaded correctly, then the default sprite would
+      appear. Whenever this ran, newSprite would always return null, and the
+      default sprite would always appear and the Debug Log would always return
+      0.
+    </p>
+    <p>
+      After discussions about this error in a stand up, the reason for the null
+      return was due to the fact that the resources.load() function is
+      deprecated by Unity because of performance issues and insufficient memory
+      use. To fix this, I instead had to use Unity’s Addressable Asset System to
+      change the image. This is a Unity package (and also API) that helps with
+      managing assets, especially dynamic content.
+    </p>
+    <p>
+      With my first iteration of the script using the addressables I created an
+      array of all possible weather types, compared the array to the current
+      weather type and then got the array index and used it in a switch case to
+      load the correct image. This iteration both didn't work but was also
+      highly inefficient.
+    </p>
+    <p>
+      To make the final iteration, instead of using a switch case to set the
+      final image, I used an array set in the engine that has all of the
+      addressable images needed. Then I found the correct number in the array
+      using the same FindWeather() method as the iteration before.
+    </p>
+    <code><pre></pre></code>
+    <p>
+      This final solution provided efficient use of memory through using
+      Addressables as well as organised and concise coding solutions through the
+      use of functions.
+    </p>
+    <h3>Reflection on Collaboration and Communication</h3>
+    <p>
+      Collaboration with the group worked well overall. We communicated well
+      throughout development through Discord which worked well to keep everybody
+      in the group informed about the status of the project. As well as, all
+      groupmates came to stand ups and on any occasions they couldn’t would
+      always let the group know. Because of this the group benefited from being
+      able to talk in person once a week to discuss what we had done that week,
+      any issues and what we were going to do the next week. Being able to talk
+      about issues in person with the group provided time to get other
+      programmers' opinions on how to get over roadblocks, for example in my
+      case my issue with changing the UI Image. 
+    </p>
+    <p>
+      One issue that we had with collaboration was having a new member join part
+      way through development. This caused issues due to having already
+      delegated development evenly so we then had to reshuffle the development
+      structure. This however was resolved within a few stand up meetings and so
+      once the new collaborator was situated with the program and what we were
+      doing she was able to find her place in development and contribute well to
+      the group.
+    </p>
+    <p>
+      Another issue we had was when in development was with how if two people
+      were working on the project at the same time and both accidentally edited
+      the same thing an error would be produced when pushing updates and the
+      changes that one person had made would have to be stashed. To remedy this
+      so it wouldn’t happen again, we would let people know when we were working
+      on the project as well as what we were doing. We also started using
+      multiple scenes that could be merged later on in development so that when
+      working on the project at the same time, teammates were less likely to
+      accidentally edit a part of the project that someone else was working on.
+      This solution worked well and we had no more issues with not being able to
+      push edits due to conflicting branches.
+    </p>
+    <p>
+      An issue we had with communication was having a team member editing and
+      working on other people's code without proper communication with the
+      group. For example, in some of my code there were parts that another
+      programmer needed to use a variable in one of my scripts, but decided to
+      program their work in my class as a method, as they did not want to make
+      the variable global. However this method did not logically belong in that
+      code as it does not relate to the rest of the code. This method also
+      didn’t work and so made the rest of the previously working code break.
+      This then meant when I returned to the code, it was broken because of code
+      I had not written and did not know.
+    </p>
+    <p>
+      However, this issue was quickly fixed when the programmer was alerted of
+      their problem and they reversed their changes, putting it in its own class
+      and just creating an identical variable in that class which reversed the
+      error and fixed the original code. With them now in separate classes, they
+      both worked properly.
+    </p>
+    <p>
+      This project also benefited immensely from paired programming, which is a
+      form of agile development where a ‘Driver’ actively writes the code and a
+      ‘Navigator’ reviews what has been written. This proved to be very
+      beneficial for the group, for example when working on code to do with the
+      weather API as it needs to interact with the location API to return its
+      data. By using paired programming, and having the programmer who did the
+      location API programming as the Navigator it meant that the Driver for the
+      weather API did not have to spend extra time learning how the location API
+      worked so that it could use its retrieved data as the Navigator could tell
+      them. This improved the overall efficiency of code as well as kept
+      programmers with overlapping codes well informed so that all parties knew
+      exactly what was going on in the project. We also did this approach with
+      loading the rain, snow and clouds particles. This majorly improved the
+      debugging process and meant that syntax errors were spotted quickly and
+      logic errors could be discussed, which made finding solutions faster and
+      therefore development a lot faster and less stressful overall. 
+    </p>
+    <p>
+      Overall, the collaboration of this project worked well, workloads were
+      spread evenly and, for the most part, project members were kept in the
+      loop. In times when this was not the case, the team could communicate
+      easily to fix the issue and it was fixed swiftly. Paired programming
+      benefited the group massively to keep on top of schedule and also to keep
+      code streamlined and efficient with limited redundancies. Despite the
+      addition of a new team member mid-development, we still managed to keep on
+      top of workload and keep it even.
+    </p>
+    <div class="section-line"></div>
+    <h3>Reference List</h3>
+    <p>
+      AccuWeather API Packages. (n.d.). AccuWeather.
+      https://developer.accuweather.com/packages
+    </p>
+    <p>
+      IP Flare. (n.d.). [Computer software]. IP Flare. https://www.ipflare.io/
+    </p>
+    <p>IP-API. (2022). [Computer software]. IP-API. https://ip-api.com/</p>
+    <p>
+      IP-API: Terms and Policies. (2022). IP-API. https://ip-api.com/docs/legal
+    </p>
+    <p>
+      OpenAI API (Version DALL.E 3). (n.d.). [Computer software]. OpenAI.
+      https://platform.openai.com/docs/guides/images
+    </p>
+    <p>
+      Trefle API (Version 1.6.0). (n.d.). [Computer software]. Trefle.
+      https://trefle.io/
+    </p>
+    <p>
+      Weather API. (n.d.). [Computer software]. Visual Crossing.
+      https://www.visualcrossing.com/weather-api
+    </p>
+  </div>
+  <div class="post-footer">
+    <a href="#" class="read-more">Read More</a>
+  </div>
+</article>
+
+
+

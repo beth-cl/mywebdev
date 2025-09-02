@@ -1,0 +1,125 @@
+<!-- Potion Profiteer Post 1 -->
+<article class="blog-post">
+  <h2>Games Development: Potion Profiteer</h2>
+  <div class="post-meta">
+    <time datetime="2024-03-13">13 Febuary 2024</time>
+    <span class="category">First Year</span>
+    <span class="category">Unity</span>
+  </div>
+
+  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+  <div class="post-content">
+    <p>
+      To make Potion Profiteer, we made the choice of using the unity engine
+      over Unreal Engine 5 as The game has 4 coders on this project. As a result
+      using Unity means that we can work more collaboratively using GitHub.
+      Thanks to my introduction to Unity and C# programming, it made me one of
+      the more experienced, leader coders of the 4 of us.
+    </p>
+    <p>
+      In this project I have been tasked with coding the storefront. I used
+      computational thinking to help code this as it helps to understand complex
+      problems and create solutions. Therefore the first thing I did was
+      decompose the problem by looking at the design draft. By using
+      decomposition I could more easily tackle the code by dividing it into more
+      understandable chunks. I think this was very useful as it helped to
+      solidify my understanding on how to tackle the code and gave me a more
+      solid understanding on what I am doing so I can therefore do it to a
+      higher standard. However, one disadvantage is that this was a very simple
+      decomposition and a may have missed things.
+    </p>
+    <p>
+      From this division of the problem I have decided to work on the customer
+      sprite first. This is because I feel it is the main function of the
+      storefront. I decided to use a singular customer sprite that switched
+      images to the different images of customers in a switch statement. I used
+      a switch statement for two reasons. The first that it is more efficient
+      than an if statement as the code will only read the case it needs rather
+      than all the if statements. The second as it would be easier to randomise
+      as a switch case, as random customers was one of the issues highlighted in
+      the original decomposition.
+    </p>
+    <p>
+      During this session I also tried to randomise the value of 'num' in the
+      switch case. This proved to be more difficult then originally anticipated
+      and so for the time being I left it as a simple switch case where 'num'
+      increased by 1 at each key press and made sure that when it defaulted,
+      'num' returned back to 0. I did this because I needed a way to bug check
+      that the rest of my sprite change code was working and so I needed
+      something to initiate that switch case.
+    </p>
+    <pre><code>
+      using System.Collections;
+      using System.Collections.Generic;
+      using UnityEngine;
+      //using System;
+      
+      public class CustomerSpriteChange : MonoBehaviour
+      {
+          public Sprite sp1;
+          public Sprite sp2;
+          public Sprite sp3;
+          public Sprite sp4;
+          public Sprite sp5;
+          // will make efficient later //
+      
+          int num = 0;
+          //Random rnd = new Random();
+      
+          // Start is called before the first frame update //
+          void Start()
+          {
+              
+          }
+      
+          // Update is called once per frame
+          void Update()
+          {
+              if (Input.GetMouseButtonDown(0))
+              {
+                  num++;
+              }
+      
+              //int num = rnd.Next(0,3);
+              // havent figured out how to randomise yet so for now customers have an order, this should be temp //
+              switch (num)
+              {
+                  case 0:
+                      GetComponentSpriteRenderer>().sprite = sp1;
+                      //num++;
+                      break;
+                  case 1:
+                      GetComponentSpriteRenderer>().sprite = sp2;
+                      //num++;
+                      break;
+                  case 2:
+                      GetComponentSpriteRenderer>().sprite = sp3;
+                      //num++;
+                      break;
+                  case 3:
+                      GetComponentSpriteRenderer>().sprite = sp4;
+                      //num++;
+                      break;
+                  case 4:
+                      GetComponentSpriteRenderer>().sprite = sp5;
+                      break;
+                  default:
+                      num = 0;
+                      break;
+              }
+          }
+      }</code></pre>
+    <p>
+      To improve this code I could combine the "Public Sprite" initiations to be
+      one line of code instead of 5. The void Start() can also be removed as it
+      is unused in this class. Next I intend to make expand on this code to add
+      a potion to interact with and a text to ask for the potion.
+    </p>
+  </div>
+  <div class="post-footer">
+    <a href="#" class="read-more">Read More</a>
+  </div>
+</article>
+
+
+
