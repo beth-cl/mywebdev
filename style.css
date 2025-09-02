@@ -290,11 +290,6 @@ nav a.active {
   color: white;
   transition: background-color 0.5s ease-in-out;
 }
-.datetime {
-  font-size: 0.9rem;
-  color: var(--text-secondary);
-  margin-bottom: 1rem;
-}
 
 
 /* ===== BUTTONS ===== */
@@ -385,7 +380,7 @@ footer p {
 
 /* Hero Section */
 .hero {
-  min-height: 100vh;
+  min-height: 50vh;
   display: flex;
   align-items: center;
   position: relative;
