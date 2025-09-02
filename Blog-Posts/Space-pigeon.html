@@ -1,53 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beth's Game Development Blog</title>
 
-<!-- Space Pigeon Post 1 -->
-<article class="blog-post">
-  <h2>Games Development: Space Pigeon</h2>
-  <div class="post-meta">
-    <time datetime="2025-08-30">31 December 2023</time>
-    <span class="category">First Year</span>
-    <span class="category">Unreal Engine</span>
-  </div>
-  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
-  <div class="post-content">
-    <p>
-      Space Pigeon was the first game I made in Unreal Engine 5 with a group of
-      people. This was made for the Platformer prompt we were given for this
-      Game Jam. Making this I had to take more of a lead programmer role, where
-      I worked on the menu, character movements, enemy movements and level
-      changes. I enjoyed this project as I was able to code what would be the
-      fundamentals for a lot of games and so I'd be able to use what I'd learnt
-      a lot in future projects.
-    </p>
-    <h3>Blueprint Programming</h3>
-    <p>
-      In this project, I worked primarily with blueprints. One thing I made sure
-      to do was use comments to label all the different sections. This improved
-      my blueprints' readability and makes it easier for other programmers to
-      quickly know what it does. As well as this, I made sure to use, I used
-      custom events because it keeps the code a lot neater and can help to
-      simplify the wire network of the graph. (Epic Games, n.d.)
-    </p>
-    <p>
-      One frustrating part of this project was the enemy AIs. They were very
-      simple, they simply had to move from left to right on platforms and once
-      hit the game would end. But I came across many issues, such as them
-      walking off platforms or not walking far enough. To fix this within the
-      time constrains of the game jam, I placed objects to stop them from
-      walking off because as long as there was an object in there line of view
-      they would stop as intended. So in future, I would like to work on my
-      implementation of enemy AI movements. For example, one thing I should have
-      done is to create a base class for the enemy AI movements, then I could
-      have the different distance of AI movements as different child classes to
-      that one parent class. This would have been very easy to implement too as
-      the movement speed is set by a variable that could be different for each
-      class.
-    </p>
-    <div class="section-line"></div>
-    <h3>Bibliography</h3>
-    <p>Epic Games. (n.d.). Custom Events. Unreal Engine. https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Events/Custom/#:~:text=Custom%20Events%20provide%20you%20with,wire%20network%20of%20your%20graph.</p>
-  </div>
-  <div class="post-footer">
-    <a href="#" class="read-more">Read More</a>
-  </div>
-</article>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
+    <div class="container">
+      <!-- Space Pigeon Post 1 -->
+      <article class="blog-post">
+        <h2>Games Development: Space Pigeon</h2>
+        <div class="post-meta">
+          <time datetime="2025-08-30">31 December 2023</time>
+          <span class="category">First Year</span>
+          <span class="category">Unreal Engine</span>
+        </div>
+        <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+        <div class="post-content">
+          <p>
+            Space Pigeon was the first game I made in Unreal Engine 5 with a
+            group of people. This was made for the Platformer prompt we were
+            given for this Game Jam. Making this I had to take more of a lead
+            programmer role, where I worked on the menu, character movements,
+            enemy movements and level changes. I enjoyed this project as I was
+            able to code what would be the fundamentals for a lot of games and
+            so I'd be able to use what I'd learnt a lot in future projects.
+          </p>
+          <h3>Blueprint Programming</h3>
+          <p>
+            In this project, I worked primarily with blueprints. One thing I
+            made sure to do was use comments to label all the different
+            sections. This improved my blueprints' readability and makes it
+            easier for other programmers to quickly know what it does. As well
+            as this, I made sure to use, I used custom events because it keeps
+            the code a lot neater and can help to simplify the wire network of
+            the graph. (Epic Games, n.d.)
+          </p>
+          <p>
+            One frustrating part of this project was the enemy AIs. They were
+            very simple, they simply had to move from left to right on platforms
+            and once hit the game would end. But I came across many issues, such
+            as them walking off platforms or not walking far enough. To fix this
+            within the time constrains of the game jam, I placed objects to stop
+            them from walking off because as long as there was an object in
+            there line of view they would stop as intended. So in future, I
+            would like to work on my implementation of enemy AI movements. For
+            example, one thing I should have done is to create a base class for
+            the enemy AI movements, then I could have the different distance of
+            AI movements as different child classes to that one parent class.
+            This would have been very easy to implement too as the movement
+            speed is set by a variable that could be different for each class.
+          </p>
+          <div class="section-line"></div>
+          <h3>Bibliography</h3>
+          <p>
+            Epic Games. (n.d.). Custom Events. Unreal Engine.
+            https://docs.unrealengine.com/4.27/en-US/ProgrammingAndScripting/Blueprints/UserGuide/Events/Custom/#:~:text=Custom%20Events%20provide%20you%20with,wire%20network%20of%20your%20graph.
+          </p>
+        </div>
+      </article>
+      <a href="../blog.html" class="button-link">View All Blogs</a>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Beth's Game Development Portfolio</p>
+      </div>
+    </footer>
+  </body>
+</html>

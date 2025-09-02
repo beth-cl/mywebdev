@@ -1,161 +1,196 @@
-<!-- Cpp Practice Post 1 -->
-<article class="blog-post">
-  <h2>C++ Practice: tic tac toe</h2>
-  <div class="post-meta">
-    <time datetime="2024-02-20">20 Febuary 2024</time>
-    <span class="category">First Year</span>
-    <span class="category">C++</span>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beth's Game Development Blog</title>
 
-  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
-  <div class="post-content">
-    <p>
-      As a way of practicing my C++ coding I decided to do a simple project of
-      creating a text based noughts and crosses game. By doing this, I can learn
-      to utilise arrays and classes as well as practice my syntax as I have
-      encountered many errors due to syntax.
-    </p>
-    <code><pre>#include <iostream>
-      using namespace std;
-      
-      // initialise variables
-      int i = 0;
-      int j = 0;
-      
-      // draw the naughts and crosses board
-      void drawBoard(char board[3][3]) {
-          for (i = 0; i < 3; i++) {
-              cout << "\n";
-              for (j = 0; j < 3; j++) {
-                  cout << board[i][j] << " | ";
-              }
-              cout << "\n---------\n";
-          }
-          cout << "\n\n\n";
-      }
-      
-      // set the boolean of set win to true if there are 3 characters that are the same next to each other in a row
-      bool checkwin(char board[3][3], char player) {
-          for (int i = 0; i < 3; i++) {
-              if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
-                  return true;
-              if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
-                  return true;
-          }
-          if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
-              return true;
-          if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
-              return true;
-      
-          return false;
-      }
-      
-      int main() {
-          // initialisations
-          char board[3][3] = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} }; // the array that the X & O's are stored in
-          char player = 'X'; // defaults to X starts
-          int row, col; // the row and column the user inputs
-          int turn; // used to check if there are any more spaces in the array left
-      
-          cout << "Welcome to Tic Tac Toe!\n";
-      
-          for (turn = 0; turn < 9; turn++) {
-              drawBoard(board); // calls drawBoard & prints it
-      
-              while (true) {
-                  cout << "Player " << player << " enter row (0-2) and column (0-2) [e.g. 0 2]: ";
-                  cin >> row >> col;
-                  if (row > 2 || row < 0 || col > 2 || col < 0 || board[row][col] != ' ') {
-                      cout << "Invalid move. Try again.\n";
-                  } else {
-                      break; // a valid move causes the while loop to break and the program continues
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    
+    <div class="container">
+    <!-- Cpp Practice Post 1 -->
+    <article class="blog-post">
+      <h2>C++ Practice: tic tac toe</h2>
+      <div class="post-meta">
+        <time datetime="2024-02-20">20 Febuary 2024</time>
+        <span class="category">First Year</span>
+        <span class="category">C++</span>
+      </div>
+
+      <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+      <div class="post-content">
+        <p>
+          As a way of practicing my C++ coding I decided to do a simple project
+          of creating a text based noughts and crosses game. By doing this, I
+          can learn to utilise arrays and classes as well as practice my syntax
+          as I have encountered many errors due to syntax.
+        </p>
+        <code><pre>
+          #include < iostream>
+          using namespace std;
+          
+          // initialise variables
+          int i = 0;
+          int j = 0;
+          
+          // draw the naughts and crosses board
+          void drawBoard(char board[3][3]) {
+              for (i = 0; i < 3; i++) {
+                  cout << "\n";
+                  for (j = 0; j < 3; j++) {
+                      cout << board[i][j] << " | ";
                   }
+                  cout << "\n---------\n";
               }
-      
-              board[row][col] = player;
-      
-              // checks if the player has won using checkwin and prints it
-              if (checkwin(board, player)) {
-                  drawBoard(board);
-                  cout << "Player " << player << " wins!\n";
-                  break;
+              cout << "\n\n\n";
+          }
+          
+          // set the boolean of set win to true if there are 3 characters that are the same next to each other in a row
+          bool checkwin(char board[3][3], char player) {
+              for (int i = 0; i < 3; i++) {
+                  if (board[i][0] == player && board[i][1] == player && board[i][2] == player)
+                      return true;
+                  if (board[0][i] == player && board[1][i] == player && board[2][i] == player)
+                      return true;
               }
-      
-              player = (player == 'X') ? 'O' : 'X'; // alternates the player value. T: returns value based on the condition e.g. (is it this thing?) yes : no
+              if (board[0][0] == player && board[1][1] == player && board[2][2] == player)
+                  return true;
+              if (board[0][2] == player && board[1][1] == player && board[2][0] == player)
+                  return true;
+          
+              return false;
           }
-      
-          // accounts for a tie when all 9 spaces in the array are filled
-          if (turn == 9 && !checkwin(board, 'X') && !checkwin(board, 'O')) {
-              cout << "It's a tie!\n";
-          }
-      
-          return 0;
-      }
-      </pre></code>
-    <p>For this short project I used atutorial (Geeks For Geeks n.d.).</p>
-    <p>
-      The first part of the code has two classes. Classes are important because
-      it helps the code to be more organised and efficient as the class is only
-      used when called, it is also useful for if you wanted to create subclasses
-      from that class to use its functions or variables. The first class uses
-      two for loops to print the layout of the board while using the 3D array
-      that stores the board entries to check what should be printed where. The
-      second class checks the 3D Array to see if you have got 3 identical
-      characters in the right places.
-    </p>
-    <p>
-      The main loop of the game uses a for loop to make sure that the number of
-      turns does not exceed the number of spaces in the array. as well as
-      handling user inputs and calling the classes coded.
-    </p>
-    <h3>Debugging and commenting</h3>
-    <p>
-      After following their code, I came across many compiler errors. However,
-      before I went into debugging the code, I went about properly understanding
-      what I had written (Nystrom 2009). I did this through going through and
-      commenting instructions on what is going on in the code. Effective
-      commenting can be used to give high level explanations while keeping
-      low-level knowledge to the code itself. (Hunt & Thomas, 1999)
-    </p>
-    <p>
-      By going through the code and commenting it I was able to find the syntax
-      error in my code that was preventing it from running. Another reason for
-      me doing this is that it makes the code easier for other coders to use and
-      read as it shows them exactly what all the code does.
-    </p>
-    <h3>Reflection</h3>
-    <p>
-      By coding this simple game I was able to help myself learn C++ in an
-      applied setting. This helped me a lot with learning more of the operators
-      (such as || and ?:)that can be used in C++ which I will now be able to
-      properly utilise in future projects. This was also useful in giving
-      experience in multi-dimensional arrays That can be used in future to store
-      data in tables. For example, I could use a multi-dimensional array to
-      store the names and dialogues of NPCs in a game and then access that when
-      interacting with them. One thing I would Like to do with this code in
-      future would be to add code that would mean the players could choose
-      columns/rows 1, 2 or 3 rather than 0, 1 or 2 as I think that would produce
-      better user experience. To achieve this I would most likely take the row
-      and col variables -that would be 1, 2 or 3- and subtract 1 form them
-      before accessing that part of the array.
-    </p>
-    <div class=""section-line"></div>
-    <h3>Bibliography</h3>
-    <p>
-      Geeks For Geeks. n.d. ‘Tic-Tac-Toe in C++’. 
-      Retrieved (http://geeksforgeeks.org/tic-tac-toe-game-in-cpp/).
-    </p>
-    <p>
-      Hunt, A., & Thomas, D. (1999). The Pragmatic Programmer From 
-      Journeyman to Master. Addison-Wesley.
-    </p>
-    <p>
-      Nystrom, Robert. 2009. ‘Game Programming Patterns’. Game Programming 
-      Patterns. Retrieved (https://www.gameprogrammingpatterns.com/).
-    </p>
-  </div>
-  <div class="post-footer">
-    <a href="#" class="read-more">Read More</a>
-  </div>
-</article>
-
+          
+          int main() {
+              // initialisations
+              char board[3][3] = { {' ', ' ', ' '}, {' ', ' ', ' '}, {' ', ' ', ' '} }; // the array that the X & O's are stored in
+              char player = 'X'; // defaults to X starts
+              int row, col; // the row and column the user inputs
+              int turn; // used to check if there are any more spaces in the array left
+          
+              cout << "Welcome to Tic Tac Toe!\n";
+          
+              for (turn = 0; turn < 9; turn++) {
+                  drawBoard(board); // calls drawBoard & prints it
+          
+                  while (true) {
+                      cout << "Player " << player << " enter row (0-2) and column (0-2) [e.g. 0 2]: ";
+                      cin >> row >> col;
+                      if (row > 2 || row < 0 || col > 2 || col < 0 || board[row][col] != ' ') {
+                          cout << "Invalid move. Try again.\n";
+                      } else {
+                          break; // a valid move causes the while loop to break and the program continues
+                      }
+                  }
+          
+                  board[row][col] = player;
+          
+                  // checks if the player has won using checkwin and prints it
+                  if (checkwin(board, player)) {
+                      drawBoard(board);
+                      cout << "Player " << player << " wins!\n";
+                      break;
+                  }
+          
+                  player = (player == 'X') ? 'O' : 'X'; // alternates the player value. T: returns value based on the condition e.g. (is it this thing?) yes : no
+              }
+          
+              // accounts for a tie when all 9 spaces in the array are filled
+              if (turn == 9 && !checkwin(board, 'X') && !checkwin(board, 'O')) {
+                  cout << "It's a tie!\n";
+              }
+          
+              return 0;
+          }</pre></code>
+        <p>For this short project I used a tutorial (Geeks For Geeks n.d.).</p>
+        <p>
+          The first part of the code has two classes. Classes are important
+          because it helps the code to be more organised and efficient as the
+          class is only used when called, it is also useful for if you wanted to
+          create subclasses from that class to use its functions or variables.
+          The first class uses two for loops to print the layout of the board
+          while using the 3D array that stores the board entries to check what
+          should be printed where. The second class checks the 3D Array to see
+          if you have got 3 identical characters in the right places.
+        </p>
+        <p>
+          The main loop of the game uses a for loop to make sure that the number
+          of turns does not exceed the number of spaces in the array. as well as
+          handling user inputs and calling the classes coded.
+        </p>
+        <h3>Debugging and commenting</h3>
+        <p>
+          After following their code, I came across many compiler errors.
+          However, before I went into debugging the code, I went about properly
+          understanding what I had written (Nystrom 2009). I did this through
+          going through and commenting instructions on what is going on in the
+          code. Effective commenting can be used to give high level explanations
+          while keeping low-level knowledge to the code itself. (Hunt & Thomas,
+          1999)
+        </p>
+        <p>
+          By going through the code and commenting it I was able to find the
+          syntax error in my code that was preventing it from running. Another
+          reason for me doing this is that it makes the code easier for other
+          coders to use and read as it shows them exactly what all the code
+          does.
+        </p>
+        <h3>Reflection</h3>
+        <p>
+          By coding this simple game I was able to help myself learn C++ in an
+          applied setting. This helped me a lot with learning more of the
+          operators (such as || and ?:)that can be used in C++ which I will now
+          be able to properly utilise in future projects. This was also useful
+          in giving experience in multi-dimensional arrays That can be used in
+          future to store data in tables. For example, I could use a
+          multi-dimensional array to store the names and dialogues of NPCs in a
+          game and then access that when interacting with them. One thing I
+          would Like to do with this code in future would be to add code that
+          would mean the players could choose columns/rows 1, 2 or 3 rather than
+          0, 1 or 2 as I think that would produce better user experience. To
+          achieve this I would most likely take the row and col variables -that
+          would be 1, 2 or 3- and subtract 1 form them before accessing that
+          part of the array.
+        </p>
+        <div class="section-line"></div>
+        <h3>Bibliography</h3>
+        <p>
+          Geeks For Geeks. n.d. ‘Tic-Tac-Toe in C++’. Retrieved
+          (http://geeksforgeeks.org/tic-tac-toe-game-in-cpp/).
+        </p>
+        <p>
+          Hunt, A., & Thomas, D. (1999). The Pragmatic Programmer From
+          Journeyman to Master. Addison-Wesley.
+        </p>
+        <p>
+          Nystrom, Robert. 2009. ‘Game Programming Patterns’. Game Programming
+          Patterns. Retrieved (https://www.gameprogrammingpatterns.com/).
+        </p>
+      </div>
+    </article>
+    <a href="../blog.html" class="button-link">View All Blogs</a>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Beth's Game Development Portfolio</p>
+      </div>
+    </footer>
+  </body>
+</html>

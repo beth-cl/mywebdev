@@ -1,67 +1,98 @@
-<!-- Potion profiteer Post 2 -->
-<article class="blog-post">
-  <h2>Games Development: Potion Profiteer 2</h2>
-  <div class="post-meta">
-    <time datetime="2024-05-09">09 May 2024</time>
-    <span class="category">First Year</span>
-    <span class="category">Unity</span>
-  </div>
-  <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
-  <div class="post-content">
-    <p>
-      In this project I coded the shopfront. This had 5 features: a random
-      customer sprite, randomised request texts, a to do board that appears and
-      disappears with a button press that has 6 random order slots and a simple
-      temporary drag potion code that was used while I didn't have access to the
-      other coders inventory system.
-    </p>
-    <code><pre></pre></code>
-    <p>
-      This is the drag potion code. I also used it to store all the randomisers
-      in the same place. I stored all my randomisers in the same place because
-      all of the randomisers are triggered by the correct potion being given to
-      the customer and so by doing this here I can link all the other scripts to
-      this one which is a lot neater and creates a lot less redundancies than if
-      it is done in their respective codes. I struggled with coding this due to
-      the complexity of so many different files needing different variables and
-      so this is where visualising my data was very beneficial. Doing it this
-      way is also supported by the concept of "separation of concerns" which is
-      a design principle that describes how software is divided into modules
-      based off the functionality they perform. (Halpern, 2019)
-    </p>
-    <p>
-      I had an issue with the code randomising to the same sprite twice in a
-      row. To fix it I added a while loop that checked to see if the new random
-      number and current random number are the same and if they are, to get a
-      new random number, until the two numbers are different.
-    </p>
-    <p>
-      I used a for loop to randomise the potion asked for on the order board.
-      This made it more efficient than having to make a different switch case
-      for each of the orders.
-    </p>
-    <p>
-      I used a for loop to randomise the potion asked for on the order board.
-      This made it more efficient than having to make a different switch case
-      for each of the orders.
-    </p>
-    <p>
-      To draft my code during this project I used flowcharts a lot. This helped
-      to give me a better insight into what I was coding and helped me to
-      visualise it better, resulting in much more efficient code and less
-      debugging due to code logic not working as expected (Hunt & Thomas, 1999),
-      than if I went into coding it without any sort of plan.
-    </p>
-    <p>
-      Most of the things I would do to improve this code would be to do with
-      making the code more efficient. For example, for the code that helps you
-      enter and leave the to do board, instead of setting each object to true or
-      false in the procedures it could instead do something like this, which
-      would have dramatically reduced the amount of code needed for the class,
-      increasing both efficiency and readability:
-    </p>
-    <code>
-      <pre>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beth's Game Development Blog</title>
+
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="container">
+      <!-- Potion profiteer Post 2 -->
+      <article class="blog-post">
+        <h2>Games Development: Potion Profiteer 2</h2>
+        <div class="post-meta">
+          <time datetime="2024-05-09">09 May 2024</time>
+          <span class="category">First Year</span>
+          <span class="category">Unity</span>
+        </div>
+        <img src="images/elmoconcerned.jpg" alt="lorum ipsum Screenshot" />
+        <div class="post-content">
+          <p>
+            In this project I coded the shopfront. This had 5 features: a random
+            customer sprite, randomised request texts, a to do board that
+            appears and disappears with a button press that has 6 random order
+            slots and a simple temporary drag potion code that was used while I
+            didn't have access to the other coders inventory system.
+          </p>
+          <code><pre></pre></code>
+          <p>
+            This is the drag potion code. I also used it to store all the
+            randomisers in the same place. I stored all my randomisers in the
+            same place because all of the randomisers are triggered by the
+            correct potion being given to the customer and so by doing this here
+            I can link all the other scripts to this one which is a lot neater
+            and creates a lot less redundancies than if it is done in their
+            respective codes. I struggled with coding this due to the complexity
+            of so many different files needing different variables and so this
+            is where visualising my data was very beneficial. Doing it this way
+            is also supported by the concept of "separation of concerns" which
+            is a design principle that describes how software is divided into
+            modules based off the functionality they perform. (Halpern, 2019)
+          </p>
+          <p>
+            I had an issue with the code randomising to the same sprite twice in
+            a row. To fix it I added a while loop that checked to see if the new
+            random number and current random number are the same and if they
+            are, to get a new random number, until the two numbers are
+            different.
+          </p>
+          <p>
+            I used a for loop to randomise the potion asked for on the order
+            board. This made it more efficient than having to make a different
+            switch case for each of the orders.
+          </p>
+          <p>
+            I used a for loop to randomise the potion asked for on the order
+            board. This made it more efficient than having to make a different
+            switch case for each of the orders.
+          </p>
+          <p>
+            To draft my code during this project I used flowcharts a lot. This
+            helped to give me a better insight into what I was coding and helped
+            me to visualise it better, resulting in much more efficient code and
+            less debugging due to code logic not working as expected (Hunt &
+            Thomas, 1999), than if I went into coding it without any sort of
+            plan.
+          </p>
+          <p>
+            Most of the things I would do to improve this code would be to do
+            with making the code more efficient. For example, for the code that
+            helps you enter and leave the to do board, instead of setting each
+            object to true or false in the procedures it could instead do
+            something like this, which would have dramatically reduced the
+            amount of code needed for the class, increasing both efficiency and
+            readability:
+          </p>
+          <code>
+            <pre>
 bool orderTF = false;
 
       void Start()
@@ -87,35 +118,38 @@ bool orderTF = false;
         order1.SetActive(orderTF);
         ...
       }</pre
-      >
-    </code>
-    <p>
-      With this project, I was happy with how I fixed the randomiser to not be
-      completely random, so that players couldn't get back to back repeats.
-      However, in future I would like to spend more time thinking more about
-      better ways to execute things in a more efficient fashion, which can be
-      figured out a lot easier with things like the flowcharts that I used in
-      this project. Therefore, I will continue to utilise these in planning my
-      code in future. Another thing I think I could have improved on is my use
-      of comments and try to use them more often in future.
-    </p>
-    <div class="section-line"></div>
-    <h3>Bibliography</h3>
-    <p>
-      Hunt, A., & Thomas, D. (1999). The Pragmatic Programmer From Journeyman to
-      Master. Addison-Wesley.
-    </p>
-    <p>
-      Halpern, J. (2019). Developing 2D games with Unity: Independent Game
-      Programming with C#. Apress Media.
-      http://ebookcentral.proquest.com/lib/portsmouth-ebooks/detail.action?docID=5606699.
-    </p>
-  </div>
-  <div class="post-footer">
-    <a href="#" class="read-more">Read More</a>
-  </div>
-</article>
-
-
-
-
+            >
+          </code>
+          <p>
+            With this project, I was happy with how I fixed the randomiser to
+            not be completely random, so that players couldn't get back to back
+            repeats. However, in future I would like to spend more time thinking
+            more about better ways to execute things in a more efficient
+            fashion, which can be figured out a lot easier with things like the
+            flowcharts that I used in this project. Therefore, I will continue
+            to utilise these in planning my code in future. Another thing I
+            think I could have improved on is my use of comments and try to use
+            them more often in future.
+          </p>
+          <div class="section-line"></div>
+          <h3>Bibliography</h3>
+          <p>
+            Hunt, A., & Thomas, D. (1999). The Pragmatic Programmer From
+            Journeyman to Master. Addison-Wesley.
+          </p>
+          <p>
+            Halpern, J. (2019). Developing 2D games with Unity: Independent Game
+            Programming with C#. Apress Media.
+            http://ebookcentral.proquest.com/lib/portsmouth-ebooks/detail.action?docID=5606699.
+          </p>
+        </div>
+      </article>
+      <a href="../blog.html" class="button-link">View All Blogs</a>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Beth's Game Development Portfolio</p>
+      </div>
+    </footer>
+  </body>
+</html>

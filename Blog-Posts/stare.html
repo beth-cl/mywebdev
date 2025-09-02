@@ -1,83 +1,121 @@
-<!-- Stare Post 1 -->
-<article class="blog-post">
-  <h2>Stare: My first ever game</h2>
-  <div class="post-meta">
-    <time datetime="2023-10-13">13 October 2023</time>
-    <span class="category">First Year</span>
-    <span class="category">Unreal Engine</span>
-  </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beth's Game Development Blog</title>
 
-  <img src="images/stare.jpg" alt="scary screaming face" />
-  <div class="post-content">
-    <p>
-      For our first game jam our prompt was a “hyper-casual one button game”. I
-      decided to use this first simple game jam as an opportunity to explore
-      Unreal Engine 5 (UE5) as I wanted to improve my knowledge in blueprint
-      coding to better help me with the CSGO module in future. In hindsight, I
-      feel that Unity may have been a better engine to make Stare in, as it is
-      more suited to 2D environments than UE5, even if they are both 3D engines.
-    </p>
-    <h3>First draft and prototyping</h3>
-    <img src="images/starefirstdraft.png" alt="stare first draft" />
-    <p>
-      Before making the game, I decided to prototype it in scratch. This is
-      because Scratch gives a very straightforward way to think about the code
-      which will then help me better understand what I need to do in the final
-      version of the game.
-    </p>
-    <img src="images/starescratch.png" alt="stare scratch prototype" />
-    <p>
-      As I had never used Unreal before, starting from absolute scratch without
-      any research or tutorials would have not ended well. Because of this, I
-      found three videos that I intended to use for the game, but of which I
-      only used two. The first video was a video on how to make a basic clicker
-      (UE5 BP GURU, 2023), I followed this, which helped me to understand Unreal
-      a lot better than my previous understanding. As a one button clicker game
-      has limited capabilities in being unique I decided to use a flip flop to
-      change the image of the button when pressed. For this I used a video that
-      showed an alternation between two images (KeySmash Studios, 2020) and used
-      my own knowledge to alter it to alternate between four, this was done by
-      setting the button image to a new image depending on whether the button
-      was pressed or not pressed.
-    </p>
-    <h3>Packaging and issues</h3>
-    <p>
-      Most of the issues that came with this code come from packaging the file.
-      At first the game did not have a package at all, of which I found out that
-      the problem was where I had attempted to change the toolbar widget for
-      Stare from the default Unreal logo to an unused 5th piece of button art.
-      However in doing this, It caused the packaging to crash each time. By
-      reverting it back to the default it was able to package again. However,
-      once packaged, another problem presented itself as you could not press the
-      button. After looking into why I had this issue, I realised it was because
-      I had originally set up this game as a mobile game and so now when opening
-      the game it does not work with mouse press, and only works with
-      touchscreen. These are mistakes that can easily be fixed and won't be
-      repeated in future.
-    </p>
-    <h3>Reflection</h3>
-    <p>
-      In reflection, Stare has given me a good amount of technical challenges
-      for a first project while still being able to create a finished project. I
-      got to use a large amount of important techniques for UE5 for the first
-      time, like using functions for the text bindings and casting blueprints to
-      utilise variables in other places. My goals of improvements after this
-      game would be to build upon the foundations of what I have learnt in this
-      game to create better blueprints in future.
-    </p>
-    <div class="section-line"></div>
-    <h3>Biography</h3>
-    <p>
-      KeySmash Studios. (2020, October 31). How to Change a Button’s Image on
-      Click | Unreal Tutorial. https://youtu.be/TENH-OmlbSI?feature=shared
-    </p>
-    <p>
-      UE5 BP GURU. (2023, May 9). Making A Cookie Clicker Game—Unreal Engine 5
-      Mobile Game Tutorial. https://youtu.be/0feiF2MZk4I?feature=shared
-    </p>
-  </div>
-  <div class="post-footer">
-    <a href="#" class="read-more">Read More</a>
-  </div>
-</article>
+    <link rel="stylesheet" href="../style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Nunito:wght@400;600&family=Roboto+Mono:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Navigation Bar -->
+    <nav class="nav">
+      <ul class="nav-menu">
+        <li><a href="index.html#home">Home</a></li>
+        <li><a href="index.html#about">About Me</a></li>
+        <li><a href="index.html#portfolio" class="active">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
 
+    <div class="container">
+      <!-- Stare Post 1 -->
+      <article class="blog-post">
+        <h2>Stare: My first ever game</h2>
+        <div class="post-meta">
+          <time datetime="2023-10-13">13 October 2023</time>
+          <span class="category">First Year</span>
+          <span class="category">Unreal Engine</span>
+        </div>
+
+        <img src="images/stare.jpg" alt="scary screaming face" />
+        <div class="post-content">
+          <p>
+            For our first game jam our prompt was a “hyper-casual one button
+            game”. I decided to use this first simple game jam as an opportunity
+            to explore Unreal Engine 5 (UE5) as I wanted to improve my knowledge
+            in blueprint coding to better help me with the CSGO module in
+            future. In hindsight, I feel that Unity may have been a better
+            engine to make Stare in, as it is more suited to 2D environments
+            than UE5, even if they are both 3D engines.
+          </p>
+          <h3>First draft and prototyping</h3>
+          <img src="images/starefirstdraft.png" alt="stare first draft" />
+          <p>
+            Before making the game, I decided to prototype it in scratch. This
+            is because Scratch gives a very straightforward way to think about
+            the code which will then help me better understand what I need to do
+            in the final version of the game.
+          </p>
+          <img src="images/starescratch.png" alt="stare scratch prototype" />
+          <p>
+            As I had never used Unreal before, starting from absolute scratch
+            without any research or tutorials would have not ended well. Because
+            of this, I found three videos that I intended to use for the game,
+            but of which I only used two. The first video was a video on how to
+            make a basic clicker (UE5 BP GURU, 2023), I followed this, which
+            helped me to understand Unreal a lot better than my previous
+            understanding. As a one button clicker game has limited capabilities
+            in being unique I decided to use a flip flop to change the image of
+            the button when pressed. For this I used a video that showed an
+            alternation between two images (KeySmash Studios, 2020) and used my
+            own knowledge to alter it to alternate between four, this was done
+            by setting the button image to a new image depending on whether the
+            button was pressed or not pressed.
+          </p>
+          <h3>Packaging and issues</h3>
+          <p>
+            Most of the issues that came with this code come from packaging the
+            file. At first the game did not have a package at all, of which I
+            found out that the problem was where I had attempted to change the
+            toolbar widget for Stare from the default Unreal logo to an unused
+            5th piece of button art. However in doing this, It caused the
+            packaging to crash each time. By reverting it back to the default it
+            was able to package again. However, once packaged, another problem
+            presented itself as you could not press the button. After looking
+            into why I had this issue, I realised it was because I had
+            originally set up this game as a mobile game and so now when opening
+            the game it does not work with mouse press, and only works with
+            touchscreen. These are mistakes that can easily be fixed and won't
+            be repeated in future.
+          </p>
+          <h3>Reflection</h3>
+          <p>
+            In reflection, Stare has given me a good amount of technical
+            challenges for a first project while still being able to create a
+            finished project. I got to use a large amount of important
+            techniques for UE5 for the first time, like using functions for the
+            text bindings and casting blueprints to utilise variables in other
+            places. My goals of improvements after this game would be to build
+            upon the foundations of what I have learnt in this game to create
+            better blueprints in future.
+          </p>
+          <div class="section-line"></div>
+          <h3>Biography</h3>
+          <p>
+            KeySmash Studios. (2020, October 31). How to Change a Button’s Image
+            on Click | Unreal Tutorial.
+            https://youtu.be/TENH-OmlbSI?feature=shared
+          </p>
+          <p>
+            UE5 BP GURU. (2023, May 9). Making A Cookie Clicker Game—Unreal
+            Engine 5 Mobile Game Tutorial.
+            https://youtu.be/0feiF2MZk4I?feature=shared
+          </p>
+        </div>
+      </article>
+      <a href="../blog.html" class="button-link">View All Blogs</a>
+    </div>
+    <footer>
+      <div class="container">
+        <p>&copy; 2025 Beth's Game Development Portfolio</p>
+      </div>
+    </footer>
+  </body>
+</html>
